@@ -157,7 +157,7 @@
       <div class="container-fluid">
         <div class="text-center">
           <div class="col">
-            <h1>Monitoring Kolam Ikan</h1><br><br>
+            <h1>Monitor Kolam Ikan</h1><br><br>
           </div>
         </div>
       </div>
