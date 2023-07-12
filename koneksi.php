@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","kolamikan");
+$con = mysqli_connect("54.86.249.27","root","","kolamikan");
 // $con = mysqli_connect("localhost","root","12345","kolamikan");
 
 // Melihat koneksi error atau tidak
