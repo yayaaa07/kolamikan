@@ -196,8 +196,8 @@
               <div class="small-box bg-info">
                 <div class="inner">
                 <p style="font-size: 25px;">Cuaca</p>
-<h3 style="font-size: 330%;"><span id="cekcuaca">Tidak Hujan</span></h3>
-<h3 style="font-size: 80%;">.</h3>
+<h3 style="font-size: 50%;"><span id="cekcuaca">Tidak Hujan</span></h3>
+<h3 style="font-size: 20%;">.</h3>
 
                 </div>
                 <div class="icon">
