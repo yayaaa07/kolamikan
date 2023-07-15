@@ -53,8 +53,7 @@
                                 $no = $hal_awal +1;
                                 if ($_GET['cari']) {
                                     $cari = $_GET['cari'];
-                                $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor WHERE LEFT(waktu, 10) = '$cari' GROUP BY day(waktu) LIMIT $hal_awal, $batas");
-
+                                    $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor WHERE LEFT(waktu, 10) = '$cari' GROUP BY day(waktu) LIMIT $hal_awal, $batas");                                    
                                 }else if (!$_GET['cari'] == null){
                                     $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor WHERE day(waktu)  GROUP BY day(waktu)  ORDER BY day(waktu) DESC LIMIT $hal_awal, $batas");
                                 }else{
@@ -62,14 +61,14 @@
                                 }
                                
                                 $result = array();
-                                while($row = $sql -> fetch_array()){
-                                    $suhu = number_format($row["suhu"], 2);
-                                    $ketinggian = number_format($row["ketinggian"], 2);
-                                    $waktu = $row["waktu"];
-                                    $result[] = $row;
-                                }   
-                                
-                                
+                                while ($row = mysqli_fetch_assoc($sql)) {
+                                $suhu = number_format($row["suhu"], 2);
+                               $ketinggian = number_format($row["ketinggian"], 2);
+                                  $waktu = $row["waktu"];
+                                  $result[] = $row;
+                                }
+
+
                                 
                                 foreach ($result as $res) {
                                 
