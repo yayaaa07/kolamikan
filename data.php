@@ -69,7 +69,7 @@
                                 }
 
                                 foreach ($result as $res) {
-                                
+    
                             ?>
                             <tr>
                                 <td><?php echo $no++ ?></td>
