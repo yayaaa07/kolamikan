@@ -68,7 +68,6 @@
                                   $result[] = $row;
                                 }
 
-
                                 foreach ($result as $res) {
                                 
                             ?>
