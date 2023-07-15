@@ -69,7 +69,6 @@
                                 }
 
 
-                                
                                 foreach ($result as $res) {
                                 
                             ?>
