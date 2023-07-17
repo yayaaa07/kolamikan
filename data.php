@@ -71,7 +71,6 @@
                                 
 
 
-
                                 
                                 foreach ($result as $res) {
                                     // Memperbarui nilai $suhu dan $ketinggian pada setiap iterasi
