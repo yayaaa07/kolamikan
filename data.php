@@ -72,11 +72,14 @@
 
 
                                 
+<<<<<<< HEAD
                                 foreach ($result as $res) {
+=======
+                                 foreach ($result as $res) {
+>>>>>>> 406ff9304bab66720bce4c101713aa2bd19f1490
                                     // Memperbarui nilai $suhu dan $ketinggian pada setiap iterasi
                                     $suhu = number_format($res["suhu"], 2);
                                     $ketinggian = number_format($res["ketinggian"], 2);
-                                ?>
                                     <tr>
                                         <td><?php echo $no++ ?></td>
                                         <td><?php echo $suhu . " ℃"; ?></td>
@@ -85,6 +88,10 @@
                                         <td><?php echo $res['waktu']; ?></td>
                                     </tr>
                                 <?php } ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 406ff9304bab66720bce4c101713aa2bd19f1490
 
                         </tbody>
                     </table>
