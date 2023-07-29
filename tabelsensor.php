@@ -17,7 +17,6 @@ echo "<tr>
 echo $suhu, $ketinggian, $waktu;
 }
 //     $data[] = $row;
-// };
 // echo json_encode(array("result" => $data));
 
 
