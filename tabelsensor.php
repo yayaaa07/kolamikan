@@ -20,6 +20,5 @@ echo $suhu, $ketinggian, $waktu;
 // echo json_encode(array("result" => $data));
 
 
-
 ?>
 
