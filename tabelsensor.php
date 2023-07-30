@@ -2,7 +2,7 @@
 
 include "koneksi.php"; 
 
-$sql = mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM datasensor  GROUP BY day(waktu) ORDER BY waktu DESC LIMIT 5");
+$sql = mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor  GROUP BY day(waktu) ORDER BY waktu DESC LIMIT 5");
 $result = array(); 
 while($row=mysqli_fetch_array($sql)){
     
