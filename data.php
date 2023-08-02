@@ -49,7 +49,7 @@
                                 $next = $halaman +1;
                                 $data = mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian,
                             IF(SUM(cuaca = 'hujan') > 0, 'Hujan', 'Tidak Hujan') as cuaca,
-                            LEFT(waktu, 10) as waktu FROM sensor GROUP BY DAY(waktu)");
+                            LEFT(waktu, 10) as waktu FROM sensor GROUP BY DAY(waktu)"); 
                                 $jumlah_data = mysqli_num_rows($data);
                                 $total_hal = ceil($jumlah_data / $batas);
                                 $no = $hal_awal +1;
