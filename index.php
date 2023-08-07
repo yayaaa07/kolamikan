@@ -13,7 +13,7 @@
       setInterval(function() {
         $("#suhu").load('ceksuhu.php');
         $("#ketinggian").load('cekketinggian.php');
-        $("#cuaca").load('cekcuaca.php');
+        $("#ph").load('cekph.php');
       }, 1000);
     });
   </script>
@@ -50,7 +50,14 @@
   <script type="text/javascript">
     $(document).ready(function() {
       setInterval(function() {
-        $("#cekcuaca").load('cekcuaca.php');
+        $("#cekph").load('cekph.php');
+      }, 1000);
+    });
+    </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      setInterval(function() {
+        $("#ket").load('ketph.php');
       }, 1000);
     });
   </script>
@@ -195,13 +202,12 @@
             <div class="col-lg-3">
               <div class="small-box bg-info">
                 <div class="inner">
-                <p style="font-size: 25px;">Cuaca</p>
-<h3 style="font-size: 250%;"><span id="cekcuaca">Tidak Hujan</span></h3>
-<h3 style="font-size: 80%;">.</h3>
-
+                <p style="font-size: 25px;">Ph</p>
+                <h3 style="font-size: 50px;"><span id="cekph"></span></h3>
+                  <h3 style="font-size: 20px;"><span id="ketph"></span></h3>
                 </div>
                 <div class="icon">
-                  <i class="fas fa-cloud"></i>
+                  <i class="fas fa-flask"></i>
                 </div>
               </div>
             </div>
@@ -222,6 +228,7 @@
                       <tr>
                         <th>Suhu</th>
                         <th>Ketinggian</th>
+                        <th>Ph</th>
                         <th>Waktu</th>
                       </tr>
                     </thead>

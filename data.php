@@ -34,7 +34,7 @@
                                 <td scope="col">No</td>
                                 <td scope="col">Suhu</td>
                                 <td scope="col">Ketinggian</td>
-                                <td scope="col">Cuaca</td>
+                                <td scope="col">Ph</td>
                                 <td scope="col">Waktu</td>
                             </tr>
                         </thead>
@@ -47,43 +47,47 @@
                                 $hal_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;
                                 $previous = $halaman-1;
                                 $next = $halaman +1;
-                                $data =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor GROUP BY day(waktu)");
+                                $data =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, avg(format(ph,2)) as ph, LEFT(waktu, 10) as waktu FROM sensor GROUP BY day(waktu)");
                                 $jumlah_data = mysqli_num_rows($data);
                                 $total_hal = ceil($jumlah_data / $batas);
                                 $no = $hal_awal +1;
                                 if ($_GET['cari']) {
                                     $cari = $_GET['cari'];
-                                $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor WHERE LEFT(waktu, 10) = '$cari' GROUP BY day(waktu) LIMIT $hal_awal, $batas");
-
-                                }else if (!$_GET['cari'] == null){
-                                    $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor WHERE day(waktu)  GROUP BY day(waktu)  ORDER BY day(waktu) DESC LIMIT $hal_awal, $batas");
-                                }else{
-                                    $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, if(count(cuaca = 'hujan') > count(cuaca = 'tidak hujan'), 'Hujan', 'Tidak Hujan') as cuaca, LEFT(waktu, 10) as waktu FROM sensor WHERE day(waktu)  GROUP BY day(waktu)  ORDER BY day(waktu) DESC LIMIT $hal_awal, $batas");
+                                    $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, avg(format(ph,2)) as ph, LEFT(waktu, 10) as waktu FROM sensor WHERE LEFT(waktu, 10) = '$cari' GROUP BY day(waktu) LIMIT $hal_awal, $batas");
+                                } else {
+                                    $sql =  mysqli_query($con, "SELECT avg(format(suhu,2)) as suhu, avg(format(ketinggian,2)) as ketinggian, avg(format(ph,2)) as ph, LEFT(waktu, 10) as waktu FROM sensor GROUP BY day(waktu) ORDER BY day(waktu) DESC LIMIT $hal_awal, $batas");
                                 }
-                               
+                                
                                 $result = array();
-                                while($row = $sql -> fetch_array()){
+                                while ($row = $sql->fetch_array()) {
                                     $suhu = number_format($row["suhu"], 2);
                                     $ketinggian = number_format($row["ketinggian"], 2);
+                                    $ph = $row["ph"]; // Tambahkan baris ini untuk mengambil data dari kolom "ph"
                                     $waktu = $row["waktu"];
                                     $result[] = $row;
-                                }   
-                                
-                                
-                                
+                                }
+
                                 foreach ($result as $res) {
                                     $suhu = number_format($res["suhu"], 2);
                                     $ketinggian = number_format($res["ketinggian"], 2);
+                                    $ph = $res["ph"]; // Tambahkan baris ini untuk mengambil data dari kolom "ph"
                                     $waktu = $res["waktu"];
                                 ?>
                                 <tr>
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $suhu . " ℃"; ?></td>
                                     <td><?php echo $ketinggian . " Cm"; ?></td>
-                                    <td><?php echo $res['cuaca']; ?></td>
+                                    <td><?php echo $ph; ?></td> <!-- Tambahkan kolom "ph" di sini -->
                                     <td><?php echo $waktu; ?></td>
                                 </tr>
-                                <?php } ?>
+
+                                <td><?php echo $no++ ?></td>
+                                <td><?php echo $suhu . " ℃"; ?></td>
+                                <td><?php echo $ketinggian . " Cm"; ?></td>
+                             <td><?php echo $res['ph']; ?></td>
+                             <td><?php echo $waktu; ?></td>
+                                            </tr>
+                                            <?php } ?>
                                 
                         </tbody>
                     </table>
