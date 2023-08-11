@@ -13,61 +13,16 @@
       setInterval(function() {
         $("#suhu").load('ceksuhu.php');
         $("#ketinggian").load('cekketinggian.php');
-        $("#ph").load('cekph.php');
-      }, 1000);
-    });
-  </script>
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
+        $("#cekph").load('cekph.php'); // Mengambil data pH dari cekph.php
         $("#ceksuhu").load('ceksuhu.php');
-      }, 1000);
-    });
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
         $("#ketsuhu").load('ketsuhu.php');
-      }, 1000);
-    });
-  </script>
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
         $("#cekketinggian").load('cekketinggian.php');
-      }, 1000);
-    });
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
         $("#ket").load('ketketinggian.php');
-      }, 1000);
-    });
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
-        $("#cekph").load('cekph.php');
-      }, 1000);
-    });
-    </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
-        $("#ket").load('ketph.php');
-      }, 1000);
-    });
-  </script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      setInterval(function() {
+        $("#ketph").load('ketph.php'); // Mengambil keterangan pH dari ketph.php
         $("#tabelsensor").load('tabelsensor.php');
-      }, 1000);
+      }, 2000);
     });
-  </script> 
+  </script>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -109,9 +64,9 @@
   <div class="wrapper">
 
     <!-- Preloader -->
-    <!-- <div class="preloader flex-column justify-content-center align-items-center">
-      <img class="animation__shake" src="dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
-    </div> -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -184,7 +139,6 @@
                 <div class="icon">
                   <i class="fas fa-water"></i>
                 </div>
-
               </div>
             </div>
             <div class="col-lg-3 col-6">
@@ -202,8 +156,8 @@
             <div class="col-lg-3">
               <div class="small-box bg-info">
                 <div class="inner">
-                <p style="font-size: 25px;">Ph</p>
-                <h3 style="font-size: 50px;"><span id="cekph"></span></h3>
+                  <p style="font-size: 25px;">pH</p>
+                  <h3 style="font-size: 50px;"><span id="cekph"></span></h3>
                   <h3 style="font-size: 20px;"><span id="ketph"></span></h3>
                 </div>
                 <div class="icon">
@@ -228,7 +182,7 @@
                       <tr>
                         <th>Suhu</th>
                         <th>Ketinggian</th>
-                        <th>Ph</th>
+                        <th>pH</th> <!-- Menambahkan kolom pH -->
                         <th>Waktu</th>
                       </tr>
                     </thead>
@@ -253,41 +207,40 @@
   </div>
 
 
-  
+
 </body>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
-  =
-  <!-- jQuery UI 1.11.4 -->
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
-  <!-- Bootstrap 4 -->
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <!-- Sparkline -->
-  <script src="plugins/sparklines/sparkline.js"></script>
-  <!-- JQVMap -->
-  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-  <!-- jQuery Knob Chart -->
-  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-  <!-- daterangepicker -->
-  <script src="plugins/moment/moment.min.js"></script>
-  <script src="plugins/daterangepicker/daterangepicker.js"></script>
-  <!-- Tempusdominus Bootstrap 4 -->
-  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <!-- Summernote -->
-  <script src="plugins/summernote/summernote-bs4.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="dist/js/demo.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summsernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
 </html>

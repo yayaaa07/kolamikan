@@ -34,7 +34,7 @@
                                 <td scope="col">No</td>
                                 <td scope="col">Suhu</td>
                                 <td scope="col">Ketinggian</td>
-                                <td scope="col">Ph</td>
+                                <td scope="col">pH</td>
                                 <td scope="col">Waktu</td>
                             </tr>
                         </thead>
@@ -62,7 +62,7 @@
                                 while ($row = $sql->fetch_array()) {
                                     $suhu = number_format($row["suhu"], 2);
                                     $ketinggian = number_format($row["ketinggian"], 2);
-                                    $ph = $row["ph"]; // Tambahkan baris ini untuk mengambil data dari kolom "ph"
+                                    $ph = number_format($row["ph"], 2);
                                     $waktu = $row["waktu"];
                                     $result[] = $row;
                                 }
@@ -70,25 +70,18 @@
                                 foreach ($result as $res) {
                                     $suhu = number_format($res["suhu"], 2);
                                     $ketinggian = number_format($res["ketinggian"], 2);
-                                    $ph = $res["ph"]; // Tambahkan baris ini untuk mengambil data dari kolom "ph"
+                                    $ph = number_format($res["ph"], 2);
                                     $waktu = $res["waktu"];
                                 ?>
                                 <tr>
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $suhu . " ℃"; ?></td>
                                     <td><?php echo $ketinggian . " Cm"; ?></td>
-                                    <td><?php echo $ph; ?></td> <!-- Tambahkan kolom "ph" di sini -->
+                                    <td><?php echo $ph; ?></td> 
                                     <td><?php echo $waktu; ?></td>
                                 </tr>
-
-                                <td><?php echo $no++ ?></td>
-                                <td><?php echo $suhu . " ℃"; ?></td>
-                                <td><?php echo $ketinggian . " Cm"; ?></td>
-                             <td><?php echo $res['ph']; ?></td>
-                             <td><?php echo $waktu; ?></td>
-                                            </tr>
                                             <?php } ?>
-                                
+                    
                         </tbody>
                     </table>
                     <nav>
