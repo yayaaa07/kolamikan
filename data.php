@@ -66,7 +66,7 @@
                                     $waktu = $row["waktu"];
                                     $result[] = $row;
                                 }
-
+                                
                                 foreach ($result as $res) {
                                     $suhu = number_format($res["suhu"], 2);
                                     $ketinggian = number_format($res["ketinggian"], 2);
@@ -80,7 +80,7 @@
                                     <td><?php echo $ph; ?></td> 
                                     <td><?php echo $waktu; ?></td>
                                 </tr>
-                                            <?php } ?>
+                                <?php } ?>                                
                     
                         </tbody>
                     </table>
