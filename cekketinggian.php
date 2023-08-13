@@ -5,7 +5,7 @@ $sql = mysqli_query($con, "SELECT ketinggian FROM sensor order by id DESC");
 $data=mysqli_fetch_array($sql);
 $ketinggian=$data["ketinggian"];
 
-if($ketinggian > 300){
+if($ketinggian > 100){
     $alert = "<script>
   swal({  title: 'Buka Penutup Air Agar Air Berkurang dan Tidak Penuh',
     type: 'info',
