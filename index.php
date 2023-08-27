@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Monitoring Kolam Ikan</title>
+  <title>Pemantauan Kolam Ikan</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -83,7 +83,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <a class="brand-link">
         <img src="dist/img/logo.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Monitoring Kolam Ikan</span>
+        <span class="brand-text font-weight-light">Pemantauan Kolam Ikan</span>
       </a>
 
       <nav class="mt-2">
@@ -99,7 +99,7 @@
           <li class="nav-item">
             <a href="data.php?cari=" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Data Monitoring</p>
+              <p>Data Pemantauan</p>
             </a>
           </li>
           <li class="nav-item">
@@ -119,7 +119,7 @@
       <div class="container-fluid">
         <div class="text-center">
           <div class="col">
-            <h1>Monitoring Kolam Ikan</h1><br><br>
+            <h1>Pemantauan Kolam Ikan</h1><br><br>
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@
               <div class="card">
                 <div class="card-header">
                   <div>
-                    <h3 class="card-title">Data Rata-rata Monitoring Kolam Ikan per Hari</h3>
+                    <h3 class="card-title">Data Rata-rata Pemantauan Kolam Ikan per Hari</h3>
                   </div>
                 </div>
                 <!-- /.card-header -->
