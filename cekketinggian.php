@@ -18,13 +18,13 @@ if ($ketinggian > 150) {
             focusCancel: true
         });
     </script>";
-} elseif ($ketinggian < 40) {
+} elseif ($ketinggian < 50) {
     $alert = "<script>
         swal({  
             title: 'Ketinggian Air Rendah, Tambahkan Air Agar Tidak Kering',
             type: 'info',
             showCancelButton: true,
-            confirmButtonColor: '#ff0055'
+            confirmButtonColor: '#ff0055',
             reverseButtons: true,
             
         });
