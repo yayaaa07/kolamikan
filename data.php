@@ -14,8 +14,8 @@
 <body>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="card col-10 text-center">
-                <h1>Data Monitoring Kolam Ikan</h1>
+            <div class="card col-8 text-center">
+                <h1>Data Pemantauan Kolam Ikan</h1>
                 <div class="row justify-content-center">
                     <form action="data.php" method="get" class="form-inline">
                     <div class="from-group">
