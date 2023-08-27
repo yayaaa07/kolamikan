@@ -6,7 +6,7 @@ $data=mysqli_fetch_array($sql);
 
 $ketinggian=$data["ketinggian"];
 
-if($ketinggian > 100 ){
+if($ketinggian > 150 ){
     $ket = "Tidak Aman";
 }else{
     $ket = "Aman";

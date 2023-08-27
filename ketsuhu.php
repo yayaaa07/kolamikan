@@ -9,7 +9,7 @@ if ($suhu < 25) {
     $ketsuhu = "Suhu Air dingin";
 } else if ($suhu >= 25 && $suhu <= 32) {
     $ketsuhu = "Suhu Air Ideal";
-} else if ($suhu > 33) {
+} else if ($suhu > 35) {
     $ketsuhu = "Suhu Air Panas";
 }
 echo $ketsuhu;
