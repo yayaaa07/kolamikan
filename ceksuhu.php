@@ -25,7 +25,7 @@ if ($suhu > 40) {
             type: 'info',
             showCancelButton: true,
             reverseButtons: true,  
-            confirmButtonColor: '#ff0055'
+            confirmButtonColor: '#ff0055',
             
         });
     </script>";
