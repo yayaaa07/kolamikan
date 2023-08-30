@@ -3,10 +3,10 @@ include "koneksi.php";
 
 $sql = mysqli_query($con, "SELECT ketinggian FROM sensor ORDER BY id DESC");
 $data = mysqli_fetch_array($sql);
-$suhu = number_format($data["suhu"], 2); // Format suhu dengan 2 digit desimal
+$ketinggian = number_format($data["ketinggian"], 2); // Format ketinggian dengan 2 digit desimal
 
 $alert = '';
-if ($suhu > 40) {
+if ($ketinggian > 40) {
     $alert = "<script>
         swal({  
             title: 'Suhu Air Meningkat, Masukkan Air Baru Agar Suhu Kembali Normal',
@@ -18,7 +18,7 @@ if ($suhu > 40) {
             focusCancel: true
         });
     </script>";
-} elseif ($suhu < 20) {
+} elseif ($ketinggian < 20) {
     $alert = "<script>
         swal({  
             title: 'Suhu Air Terlalu Rendah, Perhatikan Pendinginan',
@@ -29,5 +29,5 @@ if ($suhu > 40) {
         });
     </script>";
 }
-echo $suhu . $alert;
+echo $ketinggian . $alert;
 ?>
