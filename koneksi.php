@@ -1,6 +1,6 @@
 <?php
 $con = mysqli_connect("localhost","root","","kolamikan");
-// $con = mysqli_connect("localhost","root","yuliana123","kolamikan");
+// $con = mysqli_connect("localhost","root","yuzadisy07","kolamikan");
 
 // Melihat koneksi error atau tidak
 if (mysqli_connect_errno()){
