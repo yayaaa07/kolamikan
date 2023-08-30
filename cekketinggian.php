@@ -3,7 +3,7 @@ include "koneksi.php";
 
 $sql = mysqli_query($con, "SELECT ketinggian FROM sensor ORDER BY id DESC");
 $data = mysqli_fetch_array($sql);
-$ketinggian = $data["ketinggian"];
+$ketinggian = number_format($data["ketinggian"], 2); // Format ketinggian dengan 2 digit desimal
 
 $alert = '';
 if ($ketinggian > 150) {
@@ -26,7 +26,6 @@ if ($ketinggian > 150) {
             showCancelButton: true,
             confirmButtonColor: '#ff0055',
             reverseButtons: true,
-            
         });
     </script>";
 }
