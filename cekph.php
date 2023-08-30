@@ -7,19 +7,17 @@ $ph = $data["ph"];
 
 $alert = null;
 if ($ph < 5) {
-    $alert = "<script>
-        swal({  
-            title: 'pH Air Terlalu Rendah, Lakukan Penyesuaian pH',
-            type: 'info',
-            showCancelButton: true,
-            reverseButtons: true,  
-            confirmButtonColor: '#ff0055'
-        });
-    </script>";
+    $alert = "pH Air Terlalu Rendah, Lakukan Penyesuaian pH";
 } elseif ($ph > 8) {
-    $alert = "<script>
+    $alert = "pH Air Terlalu Tinggi, Lakukan Penyesuaian pH";
+}
+
+echo $ph;
+
+if ($alert) {
+    echo "<script>
         swal({  
-            title: 'pH Air Terlalu Tinggi, Lakukan Penyesuaian pH',
+            title: '$alert',
             type: 'info',
             showCancelButton: true,
             reverseButtons: true,  
@@ -27,6 +25,4 @@ if ($ph < 5) {
         });
     </script>";
 }
-
-echo $ph, $alert;
 ?>
