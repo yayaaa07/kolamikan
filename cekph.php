@@ -1,19 +1,29 @@
 <?php
-include "koneksi.php"; 
+include "koneksi.php";
 
-$sql = mysqli_query($con, "SELECT AVG(suhu) as avg_suhu, AVG(ketinggian) as avg_ketinggian, AVG(ph) as avg_ph, LEFT(waktu, 10) as waktu FROM datasensor GROUP BY DAY(waktu) ORDER BY waktu DESC LIMIT 5");
+$sql = mysqli_query($con, "SELECT avg(suhu) as suhu, avg(ketinggian) as ketinggian, avg(ph) as ph, LEFT(waktu, 10) as waktu FROM sensor GROUP BY day(waktu) ORDER BY waktu DESC LIMIT 5");
+$data = mysqli_fetch_array($sql);
+$ph = number_format($data["ph"], 2); 
 
-while ($row = mysqli_fetch_array($sql)) {
-    $avg_suhu = number_format($row["avg_suhu"], 2);
-    $avg_ketinggian = number_format($row["avg_ketinggian"], 2);
-    $avg_ph = number_format($row["avg_ph"], 2);
-    $waktu = $row["waktu"];
+$alert = null;
+if ($ph < 5) {
+    $alert = "pH Air Terlalu Rendah, Lakukan Penyesuaian pH";
+} elseif ($ph > 8) {
+    $alert = "pH Air Terlalu Tinggi, Lakukan Penyesuaian pH";
+}
 
-    echo "<tr>
-        <td>".$avg_suhu."℃</td>
-        <td>".$avg_ketinggian." cm</td>
-        <td>".$avg_ph."</td>
-        <td>".$waktu."</td>
-    </tr>";
+echo $ph;
+
+if ($alert) {
+    $alertScript = "<script>
+        swal({  
+            title: '$alert',
+            type: 'info',
+            showCancelButton: true,
+            reverseButtons: true,  
+            confirmButtonColor: '#ff0055'
+        });
+    </script>";
+    echo $alertScript;
 }
 ?>
