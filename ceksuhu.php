@@ -7,9 +7,17 @@ $suhu = $data["suhu"];
 
 $alert = '';
 if ($suhu > 40) {
-    $alert = "<script>
+    $alert = "Suhu Air Meningkat, Masukkan Air Baru Agar Suhu Kembali Normal";
+} elseif ($suhu < 20) {
+    $alert = "Suhu Air Terlalu Rendah, Perhatikan Pendinginan";
+}
+
+echo $suhu;
+
+if (!empty($alert)) {
+    echo "<script>
         swal({  
-            title: 'Suhu Air Meningkat, Masukkan Air Baru Agar Suhu Kembali Normal',
+            title: '$alert',
             type: 'info',
             showCancelButton: true,
             confirmButtonColor: '#ff0055',
@@ -18,17 +26,5 @@ if ($suhu > 40) {
             focusCancel: true
         });
     </script>";
-} elseif ($suhu < 20) {
-    $alert = "<script>
-        swal({  
-            title: 'Suhu Air Terlalu Rendah, Perhatikan Pendinginan',
-            type: 'info',
-            showCancelButton: true,
-            reverseButtons: true,  
-            confirmButtonColor: '#ff0055',
-            
-        });
-    </script>";
 }
-echo $suhu . $alert;
 ?>
