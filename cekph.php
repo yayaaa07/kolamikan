@@ -15,7 +15,7 @@ if ($ph < 5) {
 echo $ph;
 
 if ($alert) {
-    echo "<script>
+    $alertScript = "<script>
         swal({  
             title: '$alert',
             type: 'info',
@@ -24,5 +24,6 @@ if ($alert) {
             confirmButtonColor: '#ff0055'
         });
     </script>";
+    echo str_replace('.00', '', $alertScript);
 }
 ?>
